@@ -20,7 +20,7 @@ new #[Layout('layouts.guest')] class extends Component {
         Session::regenerate();
 
         $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
-        
+
     }
 };
 ?>
@@ -41,7 +41,7 @@ new #[Layout('layouts.guest')] class extends Component {
             <form wire:submit.prevent="login" class="max-w-md bg-white mx-auto p-4 shadow-md rounded-lg">
                 <div class="text-center mt-4">
                     <h1 class="text-2xl font-bold text-black">Login</h1>
-                    <p class="text-gray-600 mt-2">Selamat datang di Gumukmas Farm Website</p>
+                    <p class="text-gray-600 mt-2">Selamat datang di IQACS Itik</p>
                 </div>
 
                 <!-- Email Address -->
