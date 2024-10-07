@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\MobileController;
+use App\Http\Controllers\Api\SensorController;
 use App\Http\Controllers\DeviceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,4 +18,8 @@ Route::controller(DeviceController::class)->prefix('/device')->group(function ()
     Route::post('/metana', [DeviceController::class, 'metana']);
     Route::post('/temperature', [DeviceController::class, 'temperature']);
     Route::post('/humidity', [DeviceController::class, 'humidity']);
+});
+
+Route::controller(SensorController::class)->group(function () {
+    Route::post('sensors/value', 'create');
 });
