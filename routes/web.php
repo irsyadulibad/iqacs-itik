@@ -7,6 +7,7 @@ use App\Exports\MetanaExport;
 use App\Exports\TemperatureExport;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\SensorValueController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
@@ -74,6 +75,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         return Excel::download(new DioksidaExport($startDate, $endDate), 'dioksida_data.xlsx');
     })->name('export.dioksida');
+
+    Route::controller(SensorValueController::class)
+        ->prefix('sensor-values')
+        ->name('sensor-values.')
+        ->group(function () {
+            Route::get('/temperatures', 'temperature')->name('temperature');
+            Route::get('/humidities', 'humidity')->name('humidity');
+        });
 });
 
 require __DIR__ . '/auth.php';
