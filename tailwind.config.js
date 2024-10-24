@@ -17,7 +17,7 @@ export default {
         },
         extend: {
             colors: {
-                dgreen: "#A04747",
+                dgreen: "#EF9C66",
                 lgreen: "#059669",
                 orange: "#FD7E0B",
                 tblack: "#1F2937",
