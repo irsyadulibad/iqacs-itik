@@ -37,16 +37,42 @@
                     <span class="ms-3">Monitoring</span>
                 </a>
             </li>
+
             <li>
-                <a
-                    href="{{ route("dashboard") }}"
-                    class="flex items-center p-2 rounded-lg dark:text-white hover:text-orange hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                <button
+                    type="button"
+                    class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg text-white dark:text-white hover:text-orange hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    aria-controls="dropdown-example"
+                    data-collapse-toggle="dropdown-example"
                 >
                     <i
                         class="ti ti-align-box-left-middle text-2xl text-gray-200 transition duration-75 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-orange"
                     ></i>
-                    <span class="ms-3">Rekam Data</span>
-                </a>
+                    <span
+                        class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                    >
+                        Rekam Data
+                    </span>
+                    <i class="ti ti-chevron-down"></i>
+                </button>
+                <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <li>
+                        <a
+                            href="{{ route("history.temperature") }}"
+                            class="flex items-center w-full p-2 text-white transition duration-75 rounded-lg pl-11 group hover:text-orange hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        >
+                            Temperature
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="{{ route("history.humidity") }}"
+                            class="flex items-center w-full p-2 text-white transition duration-75 rounded-lg pl-11 group hover:text-orange hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        >
+                            Humidity
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
