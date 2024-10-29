@@ -22,6 +22,6 @@ class DeviceController extends Controller
             ->limit(7)
             ->get();
 
-        return DeviceValueResource::collection($records);
+        return DeviceValueResource::collection($records->reverse());
     }
 }
