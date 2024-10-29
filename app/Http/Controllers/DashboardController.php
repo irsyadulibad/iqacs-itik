@@ -8,12 +8,19 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
-        $devices = Device::with(['values' => function ($query) {
-            $query->whereIn('type', ['temperature', 'humidity'])
-                ->latest('created_at');
-        }])->get()->map(function ($device) {
-            $device->temp = $device->values->firstWhere('type', 'temperature');
-            $device->humi = $device->values->firstWhere('type', 'humidity');
+        $devices = Device::all()->map(function ($device) {
+            $device->temp = $device->values()
+                ->where('device_id', $device->id)
+                ->where('type', 'temperature')
+                ->orderBy('created_at', 'desc')
+                ->first();
+
+            $device->humi = $device->values()
+                ->where('device_id', $device->id)
+                ->where('type', 'humidity')
+                ->orderBy('created_at', 'desc')
+                ->first();
+
             return $device;
         });
 

@@ -50,7 +50,9 @@
                                 @if (! $device->humi?->value)
                                     <span>-</span>
                                 @else
-                                    <span class="m-0 text-2xl">30</span>
+                                    <span class="m-0 text-2xl">
+                                        {{ $device->humi->value }}
+                                    </span>
                                     <span class="m-0 text-xs">%</span>
                                 @endif
                             </span>
