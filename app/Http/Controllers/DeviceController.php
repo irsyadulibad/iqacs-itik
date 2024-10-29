@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\DeviceValueResource;
+use App\Http\Resources\ValueQualityResource;
 use App\Models\Device;
 use App\Models\DeviceValue;
 use Illuminate\Http\Request;
@@ -23,5 +24,16 @@ class DeviceController extends Controller
             ->get();
 
         return DeviceValueResource::collection($records->reverse());
+    }
+
+    public function valueQuality(Device $device, Request $request)
+    {
+        $record = DeviceValue::orderBy('created_at', 'desc')
+            ->where('device_id', $device->id)
+            ->where('type', $request->type ?? 'temperature')
+            ->limit(1)
+            ->first();
+
+        return ValueQualityResource::make($record);
     }
 }
