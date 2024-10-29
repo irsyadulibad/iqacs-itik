@@ -8,6 +8,17 @@ window.jQuery = $
 
 Chart.register(...registerables)
 
+const tresholds = {
+    temperature: {
+        low: 20,
+        high: 100,
+    },
+    humidity: {
+        low: 20,
+        high: 100,
+    },
+}
+
 const chartColors = {
     temperature: {
         border: "rgba(75, 192, 192, 1)",
@@ -21,52 +32,21 @@ const chartColors = {
 
 let charts = {}
 
-function updateQuality(selector, value) {
-    const cEl = document.getElementById(`${selector}-indacator`)
+function updateQuality(selector, device, type) {
     $.ajax({
-        url: "{{ route('api.charthumidity', ['id' => 1]) }}",
-        type: "GET",
-        dataType: "json",
-        headers: {
-            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        url: `/device/${device}/quality`,
+        data: {
+            type,
         },
-        success: function (data) {
-            // Update chart
-            chartHumidity.data.labels = data.labels
-            chartHumidity.data.datasets[0].data = data.data
-            chartHumidity.update()
-
-            // Update the latest value and last updated time
-            var latestValue = data.latest.nilai_humidity
-            var lastUpdated = new Date(data.latest.created_at).toLocaleString()
-            $("#latestValueHumidity").text(latestValue)
-            $("#lastUpdatedHumidity").text("Terakhir update " + lastUpdated)
-
-            // Calculate percentage for the progress bar and needle position
-            var minValue = 20 // Ganti dengan nilai minimum kadar metana
-            var maxValue = 100 // Ganti dengan nilai maksimum kadar metana
+        success(res) {
             var percentage =
-                ((latestValue - minValue) / (maxValue - minValue)) * 100
+                ((parseFloat(res.data.value) - tresholds[type].low) /
+                    (tresholds[type].high - tresholds[type].low)) *
+                100
 
-            // Update the progress bar and needle position
-            var progressFill = $("#progressFillHumidity")
-            var progressNeedle = $("#progressNeedleHumidity")
-            progressFill.css("width", percentage + "%")
-            progressNeedle.css("left", percentage + "%")
-            $("#percentageValueHumidity").text(percentage.toFixed(2) + "%")
+            const indicator = percentage < 0 ? 0 : percentage
 
-            // Update the color of the small circle based on percentage
-            var colorIndicator = $("#colorIndicatorHumidity")
-            if (percentage <= 33) {
-                colorIndicator.css("background-color", "red")
-            } else if (percentage <= 66) {
-                colorIndicator.css("background-color", "yellow")
-            } else {
-                colorIndicator.css("background-color", "green")
-            }
-        },
-        error: function (data) {
-            console.log(data)
+            $(`#${selector}-indicator`).css("left", Math.round(indicator) + "%")
         },
     })
 }
@@ -84,7 +64,7 @@ function drawDeviceChart(selector, type, title) {
             const labels = res.data.map((item) => item.created_at)
             const values = res.data.map((item) => item.value)
 
-            updateQuality(selector, values.slice(-1))
+            updateQuality(selector, cEl.dataset.device, type)
 
             if (charts[selector]) {
                 charts[selector].data.labels = labels
