@@ -4,10 +4,7 @@
     >
         <div class="text-center mb-6">
             <a href="/">
-                <img
-                    src="{{ Vite::asset("resources/images/logo.png") }}"
-                    class="w-16 h-16 mx-auto"
-                />
+                <img src="/images/logo.png" class="w-16 h-16 mx-auto" />
             </a>
         </div>
 

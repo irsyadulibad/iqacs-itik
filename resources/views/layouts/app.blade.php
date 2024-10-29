@@ -8,8 +8,11 @@
 
         @vite("resources/css/app.css")
     </head>
-    <body class="auth-body">
-        <div class="flex items-center justify-center min-h-screen min-w-full">
+    <body>
+        <x-navbar />
+        <x-sidebar />
+
+        <div class="p-4 sm:ml-64">
             {{ $slot }}
         </div>
 
