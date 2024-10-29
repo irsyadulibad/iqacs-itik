@@ -28,13 +28,24 @@
         <ul class="space-y-2 font-medium text-white mt-8">
             <li>
                 <a
-                    href="#"
+                    href="{{ route("dashboard") }}"
                     class="flex items-center p-2 rounded-lg dark:text-white hover:text-orange hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                     <i
                         class="ti ti-file-analytics text-2xl text-gray-200 transition duration-75 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-orange"
                     ></i>
-                    <span class="ms-3">Dashboard</span>
+                    <span class="ms-3">Monitoring</span>
+                </a>
+            </li>
+            <li>
+                <a
+                    href="{{ route("dashboard") }}"
+                    class="flex items-center p-2 rounded-lg dark:text-white hover:text-orange hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                    <i
+                        class="ti ti-align-box-left-middle text-2xl text-gray-200 transition duration-75 dark:text-gray-400 group-hover:text-orange dark:group-hover:text-orange"
+                    ></i>
+                    <span class="ms-3">Rekam Data</span>
                 </a>
             </li>
         </ul>
