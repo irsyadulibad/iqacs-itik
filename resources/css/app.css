@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .auth-body {
+        @apply bg-cover bg-center bg-dprimary;
+        background-image: url("/resources/images/pattern.png");
+    }
+}
