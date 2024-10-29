@@ -1,285 +1,74 @@
 <x-app-layout>
-    <div
-        class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
-    >
-        <div class="grid grid-cols-3 gap-4 mb-4">
-            <div
-                class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden border">
+        <div class="bg-slate-100 px-4 py-3 border-b">
+            <h3 class="text-md font-semibold text-gray-900">Dashboard</h3>
         </div>
-        <div
-            class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
-        >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                    class="w-3.5 h-3.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 18 18"
+        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            @foreach ($devices as $device)
+                <div
+                    class="rounded-lg p-5 bg-dprimary font-bold text-white cursor-pointer"
+                    data-id="{{ $device->id }}"
                 >
-                    <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 1v16M1 9h16"
-                    />
-                </svg>
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-4">
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-        </div>
-        <div
-            class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800"
-        >
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                    class="w-3.5 h-3.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 18 18"
-                >
-                    <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 1v16M1 9h16"
-                    />
-                </svg>
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
-            <div
-                class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800"
-            >
-                <p class="text-2xl text-gray-400 dark:text-gray-500">
-                    <svg
-                        class="w-3.5 h-3.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                        />
-                    </svg>
-                </p>
-            </div>
+                    <h6 class="m-0">Lokasi {{ $device->name }}</h6>
+                    <p class="m-0 mt-1 text-sm">
+                        Keterangan Lokasi:
+                        <a
+                            target="_blank"
+                            class="text-sm font-normal pl-3 underline"
+                            href="https://google.com/maps?q={{ $device->latitude }}, {{ $device->longitude }}"
+                        >
+                            <i class="ti ti-map-pin-filled"></i>
+                            <span>GMaps</span>
+                        </a>
+                    </p>
+
+                    <div class="mt-4">
+                        <div class="flex items-center justify-between">
+                            <span class="flex items-center">
+                                <i class="ti ti-temperature text-3xl"></i>
+                                <p class="m-0 inline">Temperature</p>
+                            </span>
+                            <span class="lg:pr-[50%]">:</span>
+                            <span class="flex items-start justify-center w-16">
+                                @if (! $device->temp?->value)
+                                    <span>-</span>
+                                @else
+                                    <span class="m-0 text-2xl">
+                                        {{ $device->temp->value }}
+                                    </span>
+                                    <span class="m-0 text-xs">°C</span>
+                                @endif
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="flex items-center">
+                                <i class="ti ti-droplet-half-2 text-3xl"></i>
+                                <p class="m-0 inline">Kelembaban</p>
+                            </span>
+                            <span class="lg:pr-[50%]">:</span>
+                            <span class="flex items-start justify-center w-16">
+                                @if (! $device->humi?->value)
+                                    <span>-</span>
+                                @else
+                                    <span class="m-0 text-2xl">30</span>
+                                    <span class="m-0 text-xs">%</span>
+                                @endif
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
+
+    @push("script")
+        <script>
+            document.querySelectorAll('[data-id]').forEach((el) => {
+                el.addEventListener(
+                    'click',
+                    () => (window.location.href = `/device/${el.dataset.id}`),
+                )
+            })
+        </script>
+    @endpush
 </x-app-layout>

@@ -9,4 +9,8 @@
         @apply bg-cover bg-center bg-dprimary;
         background-image: url("/resources/images/pattern.png");
     }
+
+    .panel-body {
+        @apply font-inter;
+    }
 }

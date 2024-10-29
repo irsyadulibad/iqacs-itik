@@ -1,6 +1,6 @@
 <aside
     id="logo-sidebar"
-    class="fixed top-0 bg-cover bg-center bg-dprimary left-0 z-40 w-64 h-screen pt-8 transition-transform -translate-x-full border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+    class="fixed top-0 bg-cover bg-center bg-dprimary left-0 z-40 w-56 h-screen pt-8 transition-transform -translate-x-full border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
     aria-label="Sidebar"
     style="
         background-image: url('http://iqacs-duck.research-ai.my.id/images/pattern.png');
@@ -12,13 +12,13 @@
                 <div>
                     <img
                         src="/images/logo.png"
-                        class="h-12 w-12 me-3"
+                        class="h-10 w-10 me-3"
                         alt="FlowBite Logo"
                     />
                 </div>
                 <div class="">
                     <span
-                        class="block font-semibold text-lwhite transition-all text-base duration-200 mr-4"
+                        class="block font-semibold text-lwhite transition-all text-sm duration-200 mr-4 font-inter"
                     >
                         IQACS - ITIK
                     </span>
