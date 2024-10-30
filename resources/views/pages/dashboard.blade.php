@@ -18,7 +18,7 @@
                             href="https://google.com/maps?q={{ $device->latitude }}, {{ $device->longitude }}"
                         >
                             <i class="ti ti-map-pin-filled"></i>
-                            <span>GMaps</span>
+                            GMaps
                         </a>
                     </p>
 
@@ -66,10 +66,10 @@
     @push("script")
         <script>
             document.querySelectorAll('[data-id]').forEach((el) => {
-                el.addEventListener(
-                    'click',
-                    () => (window.location.href = `/device/${el.dataset.id}`),
-                )
+                el.addEventListener('click', function (e) {
+                    if (e.target.nodeName == 'A') return
+                    window.location.href = `/device/${el.dataset.id}`
+                })
             })
         </script>
     @endpush
