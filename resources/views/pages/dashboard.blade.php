@@ -70,7 +70,7 @@
                                     <span class="m-0 text-2xl">
                                         {{ $device->ammo->value }}
                                     </span>
-                                    <span class="m-0 text-xs">%</span>
+                                    <span class="m-0 text-xs">ppm</span>
                                 @endif
                             </span>
                         </div>
