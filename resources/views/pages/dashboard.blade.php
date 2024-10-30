@@ -57,6 +57,23 @@
                                 @endif
                             </span>
                         </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="flex items-center min-w-32">
+                                <i class="ti ti-ripple-off text-3xl"></i>
+                                <p class="m-0 inline">Amonia</p>
+                            </span>
+                            <span class="lg:pr-[50%]">:</span>
+                            <span class="flex items-start justify-center w-16">
+                                @if (! $device->ammo?->value)
+                                    <span>-</span>
+                                @else
+                                    <span class="m-0 text-2xl">
+                                        {{ $device->ammo->value }}
+                                    </span>
+                                    <span class="m-0 text-xs">%</span>
+                                @endif
+                            </span>
+                        </div>
                     </div>
                 </div>
             @endforeach

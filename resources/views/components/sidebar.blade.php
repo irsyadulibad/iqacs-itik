@@ -72,6 +72,14 @@
                             Humidity
                         </a>
                     </li>
+                    <li>
+                        <a
+                            href="{{ route("history.ammonia") }}"
+                            class="flex items-center w-full p-2 text-white transition duration-75 rounded-lg pl-11 group hover:text-orange hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        >
+                            Amonia
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

@@ -21,6 +21,12 @@ class DashboardController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->first();
 
+            $device->ammo = $device->values()
+                ->where('device_id', $device->id)
+                ->where('type', 'ammonia')
+                ->orderBy('created_at', 'desc')
+                ->first();
+
             return $device;
         });
 

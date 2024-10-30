@@ -25,6 +25,10 @@ const chartColors = {
         background: "rgba(75, 192, 192, 0.2)",
     },
     humidity: {
+        border: "rgba(3, 111, 252, 1)",
+        background: "rgba(3, 111, 252, 0.2)",
+    },
+    ammonia: {
         border: "rgba(255, 99, 132, 1)",
         background: "rgba(255, 99, 132, 0.2)",
     },
@@ -104,6 +108,7 @@ function drawDeviceChart(selector, type, title) {
 function drawDeviceCharts() {
     drawDeviceChart("temp-device", "temperature", "Suhu")
     drawDeviceChart("humi-device", "humidity", "Kelembaban")
+    drawDeviceChart("ammo-device", "ammonia", "Amonia")
 }
 
 if (document.getElementById("temp-device-chart")) {

@@ -26,7 +26,16 @@ class HistoryController extends Controller
         ]);
     }
 
-    public function value()
+    public function ammonia()
+    {
+        return view('pages.device.history', [
+            'type' => 'ammonia',
+            'title' => 'Riwayat Ammonia',
+            'unit' => 'Ammonia',
+        ]);
+    }
+
+    public function value(Request $request)
     {
         $records = DeviceValue::where('type', $request->type ?? 'temperature')
             ->orderBy('created_at', 'desc')

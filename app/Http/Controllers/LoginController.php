@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -15,5 +17,12 @@ class LoginController extends Controller
     {
         $request->authenticate();
         return redirect('dashboard');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        Session::regenerate();
+        return redirect('/login');
     }
 }

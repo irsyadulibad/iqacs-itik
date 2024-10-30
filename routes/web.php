@@ -21,5 +21,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/history/temperatures', [HistoryController::class, 'temperature'])->name('history.temperature');
     Route::get('/history/humidities', [HistoryController::class, 'humidity'])->name('history.humidity');
+    Route::get('/history/ammonias', [HistoryController::class, 'ammonia'])->name('history.ammonia');
     Route::get('/history/values', [HistoryController::class, 'value'])->name('history.value');
+
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
