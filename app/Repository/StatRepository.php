@@ -24,7 +24,7 @@ class StatRepository
             ->first();
 
         foreach (range(0, 3) as $i) {
-            $hour = $lastHour->created_at->subHours($i - 1)->format('H');
+            $hour = $lastHour->created_at->subHours($i)->format('H');
             $results["{$hour}:00"] = DeviceValue::whereDate('created_at', Carbon::now())
                 ->where('type', $type)
                 ->whereRaw('HOUR(created_at) = ?', [$hour])
