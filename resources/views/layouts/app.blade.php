@@ -24,8 +24,6 @@
             {{ $slot }}
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         @vite("resources/js/app.js")
         @stack("script")
     </body>
