@@ -61,13 +61,13 @@
                 },
             }
 
-            let startDate = moment().subtract(30, 'days')
+            let startDate = moment()
             let endDate = moment()
-            let label = '30 Hari Terakhir'
+            let label = 'Hari Ini'
             let chart = null
 
             function drawChart(res, type, title) {
-                const labels = res.data.map((item) => item.created_at)
+                const labels = res.data.map((item) => item.label)
                 const values = res.data.map((item) => item.value)
 
                 if (chart) {

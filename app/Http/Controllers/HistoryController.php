@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\DeviceValueResource;
 use App\Models\DeviceValue;
+use App\Repository\HistoryRepository;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -37,10 +39,9 @@ class HistoryController extends Controller
 
     public function value(Request $request)
     {
-        $records = DeviceValue::where('type', $request->type ?? 'temperature')
-            ->orderBy('created_at', 'desc')
-            ->limit(7)
-            ->get();
+        $start = Carbon::createFromFormat('Y-m-d', $request->start);
+        $end = Carbon::createFromFormat('Y-m-d', $request->end);
+        $records = (new HistoryRepository)->value($start, $end, $request->type);
 
         return DeviceValueResource::collection($records->reverse());
     }

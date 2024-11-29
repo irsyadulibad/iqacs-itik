@@ -14,12 +14,13 @@ class DeviceValueResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $label = $this->created_at ?
+            $this->created_at->format('H:i') :
+            $this->label;
+
         return [
-            'id' => $this->id,
-            'device_id' => $this->device_id,
-            'type' => $this->type,
+            'label' => $label,
             'value' => $this->value,
-            'created_at' => $this->created_at?->format('H:i') ?? '-',
         ];
     }
 }
