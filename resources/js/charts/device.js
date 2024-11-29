@@ -34,7 +34,7 @@ function drawDeviceChart(selector, type, title) {
             type,
         },
         success(res) {
-            const labels = res.data.map((item) => item.created_at)
+            const labels = res.data.map((item) => item.label)
             const values = res.data.map((item) => item.value)
 
             updateQuality(selector, cEl.dataset.device, type)
