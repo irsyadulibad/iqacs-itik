@@ -4,15 +4,15 @@ namespace App\Repository;
 
 use App\Models\DeviceValue;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class StatRepository
 {
-    public function average(string $type)
+    public function average(string $type, string $device_id): float
     {
-        return DeviceValue::where('type', $type)
-            ->whereDate('created_at', Carbon::today())
-            ->avg('value') ?? 0;
+        return (float) DeviceValue::where('type', $type)
+            ->where('device_id', $device_id)
+            ->orderBy('created_at', 'desc')
+            ->value('value') ?? 0.0;
     }
 
     public function charts(string $type)

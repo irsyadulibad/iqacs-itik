@@ -15,12 +15,12 @@ class StatController extends Controller
         $this->repo = new StatRepository;
     }
 
-    public function index()
+    public function index(string $device_id)
     {
         return response()->json([
-            'temperature' => $this->repo->average('temperature'),
-            'humidity' => $this->repo->average('humidity'),
-            'ammonia' => $this->repo->average('ammonia'),
+            'temperature' => $this->repo->average('temperature', $device_id),
+            'humidity' => $this->repo->average('humidity', $device_id),
+            'ammonia' => $this->repo->average('ammonia', $device_id),
         ]);
     }
 
