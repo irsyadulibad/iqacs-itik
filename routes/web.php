@@ -19,10 +19,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/device/{device}/value', [DeviceController::class, 'deviceValue'])->name('device.value');
     Route::get('/device/{device}/quality', [DeviceController::class, 'valueQuality'])->name('device.quality');
 
-    Route::get('/history/temperatures', [HistoryController::class, 'temperature'])->name('history.temperature');
-    Route::get('/history/humidities', [HistoryController::class, 'humidity'])->name('history.humidity');
-    Route::get('/history/ammonias', [HistoryController::class, 'ammonia'])->name('history.ammonia');
-    Route::get('/history/values', [HistoryController::class, 'value'])->name('history.value');
+    Route::prefix('/history')->controller(HistoryController::class)
+        ->name('history.')->group(function () {
+            Route::get('/temperatures', 'temperature')->name('temperature');
+            Route::get('/humidities', 'humidity')->name('humidity');
+            Route::get('/ammonias', 'ammonia')->name('ammonia');
+            Route::get('/values', 'value')->name('value');
+            Route::get('/export', 'export')->name('export');
+        });
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });

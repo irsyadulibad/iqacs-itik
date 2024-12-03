@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Exports\HistoryExport;
 use App\Models\DeviceValue;
 use Carbon\Carbon;
 
@@ -26,5 +27,27 @@ class HistoryRepository
             ->whereDate('created_at', '<=', $end)
             ->groupBy('label')
             ->get();
+    }
+
+    public function export(Carbon $start, Carbon $end, string $type = 'temperature')
+    {
+        $days = $start->diffInDays($end) + 1;
+        $query = DeviceValue::with('device')
+            ->where('type', $type)
+            ->orderBy('created_at', 'asc')
+            ->orderBy('device_id', 'asc');
+
+        if ($days < 2) {
+            $result = $query->whereDate('created_at', $start)
+                ->get();
+
+            return new HistoryExport($result);
+        }
+
+        $result = $query->whereDate('created_at', '>=', $start)
+            ->whereDate('created_at', '<=', $end)
+            ->get();
+
+        return new HistoryExport($result);
     }
 }

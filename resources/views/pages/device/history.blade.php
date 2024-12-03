@@ -4,13 +4,21 @@
             <h3 class="text-md font-semibold text-gray-900">{{ $title }}</h3>
         </div>
         <div class="p-4">
-            <div class="flex justify-end">
+            <div class="flex justify-end gap-4 mb-5">
                 <div
                     id="daterange"
                     class="py-1 px-3 bg-dprimary text-body font-semibold text-white rounded-md flex items-center space-x-2 min-w-44"
                 >
                     <i class="ti ti-calendar-week text-lg"></i>
                     <span id="daterange-text" class="text-sm">-</span>
+                </div>
+
+                <div
+                    id="btn-export"
+                    class="flex items-center gap-1 border-2 border-dprimary rounded-md py-1 px-5 text-dprimary cursor-pointer"
+                >
+                    <i class="ti ti-upload text-lg"></i>
+                    <span class="text-sm">Ekspor</span>
                 </div>
             </div>
 
@@ -155,6 +163,13 @@
                 },
                 loadData,
             )
+
+            $('#btn-export').on('click', function () {
+                const start = startDate.format('YYYY-MM-DD')
+                const end = endDate.format('YYYY-MM-DD')
+
+                window.location.href = `/history/export?type={{ $type }}&start=${start}&end=${end}`
+            })
 
             loadData(startDate, endDate, label)
         </script>

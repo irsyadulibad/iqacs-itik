@@ -14,4 +14,9 @@ class DeviceValue extends Model
         'type',
         'value',
     ];
+
+    public function device()
+    {
+        return $this->belongsTo(Device::class);
+    }
 }

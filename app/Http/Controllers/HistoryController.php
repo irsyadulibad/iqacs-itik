@@ -7,9 +7,17 @@ use App\Models\DeviceValue;
 use App\Repository\HistoryRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HistoryController extends Controller
 {
+    private HistoryRepository $repo;
+
+    public function __construct()
+    {
+        $this->repo = new HistoryRepository;
+    }
+
     public function temperature()
     {
         return view('pages.device.history', [
@@ -41,8 +49,18 @@ class HistoryController extends Controller
     {
         $start = Carbon::createFromFormat('Y-m-d', $request->start);
         $end = Carbon::createFromFormat('Y-m-d', $request->end);
-        $records = (new HistoryRepository)->value($start, $end, $request->type);
+        $records = $this->repo->value($start, $end, $request->type);
 
         return DeviceValueResource::collection($records->reverse());
+    }
+
+    public function export(Request $request)
+    {
+        $start = Carbon::createFromFormat('Y-m-d', $request->start);
+        $end = Carbon::createFromFormat('Y-m-d', $request->end);
+        $excel = $this->repo->export($start, $end, $request->type);
+        $filename = "Riwayat " . ucfirst($request->type);
+
+        return Excel::download($excel, $filename . ".xlsx");
     }
 }
