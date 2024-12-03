@@ -17,9 +17,13 @@ function updateQuality(selector, device, type) {
                     (tresholds[type].high - tresholds[type].low)) *
                 100
 
-            const indicator = percentage < 0 ? 0 : percentage
+            let indicator = percentage < 0 ? 0 : percentage
 
-            $(`#${selector}-indicator`).css("left", Math.round(indicator) + "%")
+            if(indicator > 100) indicator = 100;
+
+            $(`#${selector}-value`).html(res.data.value);
+            $(`#${selector}-time`).html(`Terakhir update ${res.data.created_at}`);
+            $(`#${selector}-indicator`).css("left", Math.round(indicator) + "%");
         },
     })
 }

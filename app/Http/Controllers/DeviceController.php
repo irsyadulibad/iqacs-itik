@@ -34,6 +34,9 @@ class DeviceController extends Controller
             ->limit(1)
             ->first();
 
+        if (!$record)
+            return response()->json(null);
+
         return ValueQualityResource::make($record);
     }
 }

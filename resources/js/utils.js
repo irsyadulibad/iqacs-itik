@@ -22,6 +22,10 @@ const tresholds = {
         low: 20,
         high: 100,
     },
+    ammonia: {
+        low: 20,
+        high: 50,
+    },
 }
 
 export { chartColors, tresholds }

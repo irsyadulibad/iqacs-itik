@@ -36,9 +36,19 @@
                             <span class="text-lg">Buruk</span>
                         </div>
                     </div>
-                    <p class="text-center text-lg">
-                        Temperature (CH4) Saat ini
-                    </p>
+                    <div>
+                        <p class="text-center text-base m-0">
+                            Temperature (CH4) Saat ini
+                        </p>
+                        <p
+                            class="text-center text-5xl font-bold mt-3"
+                            id="temp-device-value"
+                        ></p>
+                        <p
+                            class="text-center text-sm m-0"
+                            id="temp-device-time"
+                        ></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +88,19 @@
                             <span class="text-lg">Buruk</span>
                         </div>
                     </div>
-                    <p class="text-center text-lg">Humidity (CH4) Saat ini</p>
+                    <div>
+                        <p class="text-center text-base m-0">
+                            Humidity (CH4) Saat ini
+                        </p>
+                        <p
+                            class="text-center text-5xl font-bold mt-3"
+                            id="humi-device-value"
+                        ></p>
+                        <p
+                            class="text-center text-sm m-0"
+                            id="humi-device-time"
+                        ></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,7 +127,7 @@
                     <div class="space-y-5">
                         <div class="relative">
                             <div
-                                id="humi-device-indicator"
+                                id="ammo-device-indicator"
                                 class="-top-3 left-0 w-[2px] h-[50px] absolute bg-black transition-all duration-200"
                             ></div>
 
@@ -118,7 +140,19 @@
                             <span class="text-lg">Buruk</span>
                         </div>
                     </div>
-                    <p class="text-center text-lg">Amonia (CH4) Saat ini</p>
+                    <div>
+                        <p class="text-center text-base m-0">
+                            Amonia (CH4) Saat ini
+                        </p>
+                        <p
+                            class="text-center text-5xl font-bold mt-3"
+                            id="ammo-device-value"
+                        ></p>
+                        <p
+                            class="text-center text-sm m-0"
+                            id="ammo-device-time"
+                        ></p>
+                    </div>
                 </div>
             </div>
         </div>
