@@ -94,7 +94,7 @@
                     >
                         <div class="flex flex-col gap-3">
                             <p class="text-gray-800 font-medium">
-                                Control Manual
+                                Kontrol Manual
                             </p>
                             <label
                                 class="inline-flex items-center cursor-pointer"
@@ -106,7 +106,7 @@
                                     checked
                                 />
                                 <div
-                                    class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-orange dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange"
+                                    class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-orange dark:peer-focus:ring-orange dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange"
                                 ></div>
 
                                 <span
@@ -121,53 +121,124 @@
                                 </span>
                             </label>
                         </div>
-                        <div class="flex gap-5">
-                            <div class="flex flex-col gap-2">
-                                <label for="" class="text-gray-500">
+                        <button
+                            data-modal-target="default-modal"
+                            data-modal-toggle="default-modal"
+                            class="px-5 py-2 rounded-md bg-orange text-white"
+                        >
+                            Kontrol Otomatis
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+
+            <div
+                id="default-modal"
+                tabindex="-1"
+                aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            >
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <div
+                        class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                    >
+                        <div
+                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+                        >
+                            <h3
+                                class="text-xl font-semibold text-gray-900 dark:text-white"
+                            >
+                                Timer Kontrol Otomatis
+                            </h3>
+                            <button
+                                type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                data-modal-hide="default-modal"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-5">
+                            <div class="space-y-5">
+                                <label for="start" class="font-medium">
                                     Waktu Pagi
                                 </label>
-                                <div class="flex gap-2 text-gray-600">
+                                <div class="flex gap-5">
                                     <input
                                         type="time"
-                                        class="px-5 py-1 rounded-md text-gray-700 border-none"
+                                        name="start"
+                                        id="start"
+                                        class="w-full rounded border border-gray-300"
                                     />
-                                    -
                                     <input
                                         type="time"
-                                        class="px-5 py-1 rounded-md text-gray-700 border-none"
+                                        name="end"
+                                        id="end"
+                                        class="w-full rounded border border-gray-300"
                                     />
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-2">
-                                <label for="" class="text-gray-500">
+                            <div class="space-y-5">
+                                <label for="start" class="font-medium">
                                     Waktu Sore
                                 </label>
-                                <div class="flex gap-3 text-gray-600">
+                                <div class="flex gap-5">
                                     <input
                                         type="time"
-                                        class="px-5 py-1 rounded-md text-gray-700 border-none"
+                                        name="start"
+                                        id="start"
+                                        class="w-full rounded border border-gray-300"
                                     />
-                                    -
                                     <input
                                         type="time"
-                                        class="px-5 py-1 rounded-md text-gray-700 border-none"
+                                        name="end"
+                                        id="end"
+                                        class="w-full rounded border border-gray-300"
                                     />
-                                    <button
-                                        class="px-5 py-2 rounded-md bg-orange text-white"
-                                    >
-                                        Set Timer
-                                    </button>
                                 </div>
                             </div>
                         </div>
+                        <div
+                            class="flex justify-between items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"
+                        >
+                            <button
+                                data-modal-hide="default-modal"
+                                type="button"
+                                class="text-white bg-orange hover:bg-orange focus:ring-4 focus:outline-none focus:ring-orange font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange dark:hover:bg-orange dark:focus:ring-orange"
+                            >
+                                Ubah Timer
+                            </button>
+                            <button
+                                data-modal-hide="default-modal"
+                                type="button"
+                                class="text-red-500 bg-white border border-red-500 focus:ring-4 focus:outline-none focus:ring-redbg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-500 dark:focus:ring-redbg-red-500"
+                            >
+                                Hapus Timer
+                            </button>
+                        </div>
                     </div>
-
-                    <p class="text-[12px] font-normal mt-4 text-right">
-                        Terakhir diupdate:
-                        {{ $device?->lastUpdated->locale("id")->diffForHumans() }}
-                    </p>
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
 
