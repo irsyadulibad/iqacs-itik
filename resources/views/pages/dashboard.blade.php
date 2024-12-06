@@ -161,6 +161,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <p class="text-[12px] font-normal mt-4 text-right">
+                        Terakhir diupdate:
+                        {{ $device?->lastUpdated->locale("id")->diffForHumans() }}
+                    </p>
                 </div>
             @endforeach
         </div>

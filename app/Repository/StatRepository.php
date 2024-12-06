@@ -9,7 +9,7 @@ class StatRepository
 {
     public function average(string $type, string $device_id): float
     {
-        return (float) DeviceValue::where('type', $type)
+        return DeviceValue::where('type', $type)
             ->where('device_id', $device_id)
             ->orderBy('created_at', 'desc')
             ->value('value') ?? 0.0;
