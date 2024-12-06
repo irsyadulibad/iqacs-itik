@@ -17,4 +17,9 @@ class Device extends Model
     {
         return $this->hasMany(DeviceValue::class);
     }
+
+    public function controls()
+    {
+        return $this->hasMany(Control::class);
+    }
 }

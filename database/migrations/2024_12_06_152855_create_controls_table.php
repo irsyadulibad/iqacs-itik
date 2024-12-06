@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('device_id')->constrained()->cascadeOnDelete();
             $table->integer('relay_id');
             $table->string('type', 50);
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->time('start');
+            $table->time('end');
         });
     }
 

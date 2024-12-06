@@ -16,14 +16,6 @@ class Control extends Model
         'end',
     ];
 
-    protected function casts()
-    {
-        return [
-            'start' => 'datetime',
-            'end' => 'datetime',
-        ];
-    }
-
     public function device()
     {
         return $this->belongsTo(Device::class);

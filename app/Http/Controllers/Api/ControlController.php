@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Control;
+use App\Models\Device;
+use App\Repository\ControlRepository;
 use App\Repository\ControlStateRepository;
 use Illuminate\Http\Request;
 
@@ -26,6 +29,30 @@ class ControlController extends Controller
         return response()->json([
             'status' => 'ok',
             'message' => 'Berhasil mengupdate status relay',
+        ]);
+    }
+
+    public function auto(Request $request)
+    {
+        ControlRepository::update(
+            $request->device_id,
+            $request->morning,
+            $request->afternoon
+        );
+
+        return response()->json([
+            'status' => 'ok',
+            'message' => 'Berhasil mengupdate data otomatisasi',
+        ]);
+    }
+
+    public function autoDelete(Device $device)
+    {
+        $device->controls()->delete();
+
+        return response()->json([
+            'status' => 'ok',
+            'message' => 'Berhasil menghapus data otomatisasi',
         ]);
     }
 

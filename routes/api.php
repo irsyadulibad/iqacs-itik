@@ -12,6 +12,8 @@ Route::prefix('/control')->controller(ControlController::class)
     ->name('control.')->group(function () {
         Route::get('states', 'states')->name('states');
         Route::post('manual', 'manual')->name('manual');
+        Route::post('auto', 'auto')->name('auto');
+        Route::delete('auto/{device}', 'autoDelete')->name('delete');
     });
 
 Route::get('/user', function (Request $request) {

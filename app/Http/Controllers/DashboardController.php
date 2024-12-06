@@ -17,6 +17,9 @@ class DashboardController extends Controller
     public function __invoke()
     {
         $devices = Device::all()->map(function ($device) {
+            $device->morning = $device->controls()->where('type', 'morning')->first();
+            $device->afternoon = $device->controls()->where('type', 'afternoon')->first();
+
             $device->temp = $device->values()
                 ->where('device_id', $device->id)
                 ->where('type', 'temperature')
