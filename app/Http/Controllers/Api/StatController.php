@@ -18,10 +18,12 @@ class StatController extends Controller
 
     public function index(Device $device)
     {
+        $lastUpdate = $device->values()->orderBy('created_at', 'desc')->first()->created_at;
         $data = [
             'temperature' => (float) floatval($this->repo->average('temperature', $device->id)),
             'humidity' => (float) floatval($this->repo->average('humidity', $device->id)),
             'ammonia' => (float) floatval($this->repo->average('ammonia', $device->id)),
+            'last_update' => $lastUpdate->locale("id")->format('H:i, d M Y'),
         ];
 
         return response()->json($data, options: JSON_PRESERVE_ZERO_FRACTION);
