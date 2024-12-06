@@ -19,7 +19,7 @@
             <header class="mt-7 mb-24">
                 <nav class="flex justify-between items-center w-full mx-auto py-3 relative">
                     <div class="flex-1 flex justify-start">
-                        <a href="#" class="text-title1 text-dgreen font-bold text-center">Gumukmas Multifarm</a>
+                        <a href="#" class="text-title1 text-dgreen font-bold text-center">Penetasan Itik</a>
                     </div>
                     <input type="checkbox" id="menu-btn" class="hidden">
                     <label for="menu-btn" class="lg:hidden cursor-pointer">
@@ -106,10 +106,10 @@
                 <div class="flex-1 flex items-center">
                     <div class="text-center mx-auto">
                         <h1 class="text-h3 font-bold text-white md:text-h2 lg:text-h1">Selamat Datang</h1>
-                        <h1 class="text-h3 font-bold text-white md:text-h2 lg:text-h1">Gumukmas Multifarm (GMF)</h1>
-                        <p class="text-title2 text-text mb-7">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio soluta quam libero odit asperiores</p>
+                        <h1 class="text-h3 font-bold text-white md:text-h2 lg:text-h1">Penetasan Itik - UD Putra Jember</h1>
+                        <p class="text-title2 text-text mb-7">Penetasan telur itik yang berlokasi di Kalimalang, Jawa Timur, Indonesia</p>
                         <a href="#"
-                            class="py-3 px-9 bg-orange text-title2 text-lwhite rounded-xl hover:bg-orange/80">Mulai Bermitra</a>
+                            class="py-3 px-9 bg-orange text-title2 text-lwhite rounded-xl hover:bg-orange/80">Hubungi Kami</a>
                     </div>
                 </div>
             </div>
@@ -128,10 +128,10 @@
                 <div class="order-1 mb-16 md:order-2 w-full md:w-3/5 md:pl-4">
                     <h2 class="text-h3 text-dgreen font-bold mb-4 xl:text-h2">Tentang Kami</h2>
                     <p class="text-body text-tblack leading-relaxed mb-12 xl:text-title2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nemo culpa laudantium ullam, est atque nulla quia doloribus eveniet ipsam maxime, officiis rerum sunt, neque quae asperiores accusamus minus sapiente!
+                        UD Putra Jember adalah usaha yang berfokus pada penetasan telur itik berkualitas tinggi. Berlokasi di Kalimalang, Mojomulyo, Kec. Puger, Kabupaten Jember, Jawa Timur, kami berdedikasi untuk menyediakan layanan terbaik dalam mendukung peternakan itik yang lebih produktif dan berkualitas.
                     </p>
                     <a href="#"
-                        class="py-3 px-9 mb-8 bg-orange text-title2 text-lwhite rounded-xl hover:bg-orange/80">Mulai Bermitra</a>
+                        class="py-3 px-9 mb-8 bg-orange text-title2 text-lwhite rounded-xl hover:bg-orange/80">Hubungi Kami</a>
                 </div>
             </div>
         </div>
@@ -143,9 +143,9 @@
         <div class="container mx-auto relative z-10">
             <div class="flex items-center justify-center">
                 <div class="text-center">
-                    <h1 class="text-h3 font-bold xl:text-h2 text-dgreen">Siap Memulai Kemitraan yang menguntungkan ?</h1>
-                    <h1 class="text-h3 font-bold xl:text-h2 text-dgreen mb-4">Hubungi Kami Sekarang !</h1>
-                    <p class="text-title2 text-black mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi porro, officia temporibus excepturi voluptate voluptatum sequi repellat corporis quia? Autem minus architecto voluptas inventore est voluptatem ut in deleniti accusamus?</p>
+                    <h1 class="text-h3 font-bold xl:text-h2 text-dgreen">Siap Meningkatkan Produktivitas Penetasan Anda?</h1>
+                    <h1 class="text-h3 font-bold xl:text-h2 text-dgreen mb-4">Hubungi Kami Sekarang!</h1>
+                    <p class="text-title2 text-black mb-12">Jangan ragu untuk menghubungi UD Putra Jember dan temukan solusi terbaik untuk penetasan telur itik Anda. Kami siap mendukung setiap langkah Anda menuju keberhasilan usaha peternakan itik.</p>
                     <div class="flex items-center justify-center">
                         <div
                             class="flex items-center justify-between rounded-md border border-gray-300 px-4 py-3 md:w-[558px]">
@@ -170,7 +170,8 @@
                 <!-- Column 1 -->
                 <div class="flex flex-col items-start">
                     <img src="{{ asset('images/footer/logo.png') }}" class="w-24 h-24  mt-14 mb-6" alt="Image 1">
-                    <p class="text-white text-title2 mb-6">Gumukmas Multifarm (GMF) adalah perusahaan yang berfokus pada kemitraan domba dan penyediaan pakan ternak ruminansia berkualitas tinggi yang berlokasi di Jember, Jawa Timur
+                    <p class="text-white text-title2 mb-6">
+                        UD Putra Jember adalah usaha yang bergerak di bidang penetasan telur itik dengan fokus pada teknologi modern dan efisiensi produksi. Berlokasi di Kalimalang, Mojomulyo, Kec. Puger, Kabupaten Jember, Jawa Timur.
                     </p>
                     <div class="flex space-x-4 mb-12">
                         <!-- Instagram Icon -->
@@ -201,7 +202,7 @@
                             </svg>
                         </a>
                     </div>
-                    <p class="text-white text-title2 mb-8">© 2024 Gumukmas Multifarm</p>
+                    <p class="text-white text-title2 mb-8">© {{ date('Y') }} UD Putra Jember</p>
                 </div>
                 <!-- Column 2 -->
                 <div class="flex w-full flex-col items-center md:items-center mx-auto">
@@ -222,7 +223,7 @@
                             <!-- Image Maps -->
                             <img src="{{ asset('images/footer/maps.png') }}" class="h-4 w-4 mr-2 mt-1 align-self-center"
                                 alt="Maps Icon">
-                            <a class="hover:font-bold" href="http://">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat incidunt voluptatum eligendi autem accusantium recusandae earum odit temporibus nobis quas velit aut aspernatur ut excepturi, illo corrupti? Earum, possimus?</a>
+                            <a class="hover:font-bold" href="https://www.google.com/maps/place/Ud+Putra+Jember+group/@-8.3705605,113.4153621,19z">Kalimalang, Mojomulyo, Kec. Puger, Kabupaten Jember, Jawa Timur</a>
                         </li>
 
                         <!-- Nomor Telepon 1 dengan Ikon Telepon -->
