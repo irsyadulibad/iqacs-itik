@@ -7,7 +7,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => redirect('/dashboard'));
+Route::get('/', fn() => view('landing'));
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'show'])->name('login');

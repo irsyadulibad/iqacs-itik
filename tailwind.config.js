@@ -27,6 +27,21 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 inter: ['Inter', "sans-serif"],
             },
+            fontSize: {
+                'h1': '48px',
+                'h2': '40px',
+                'h3': '33px',
+                'h4': '28px',
+                'h5': '23px',
+                'title1': '19px',
+                'title2': '16px',
+                'title3': '8px',
+                'body': '13px',
+                'caption': '11px',
+            },
+            screens: {
+                '2xl': '1440px'
+            }
         },
     },
     plugins: [
