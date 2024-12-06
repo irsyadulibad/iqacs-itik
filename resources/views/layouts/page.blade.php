@@ -12,9 +12,7 @@
 
         @vite("resources/css/app.css")
 
-        <title>
-            Gumukmas Multifarm - Kemitraan Domba dan Pakan Ternak Berkualitas
-        </title>
+        <title>Penetasan Itik - UD Putra Jember</title>
     </head>
 
     <body class="bg-lwhite font-nunito">
