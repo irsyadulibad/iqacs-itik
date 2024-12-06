@@ -14,7 +14,7 @@
 <body class="bg-lwhite">
     <!-- Start Hero Section -->
     <section id="hero" class="flex flex-col min-h-screen text-white bg-center bg-cover bg-blend-overlay px-10 md:px-32"
-        style="background-image: url('{{ asset('images/landingpage/herobackground.png') }}')">
+        style="background-image: url('{{ asset('images/landingpage/herobackground.jpg') }}')">
         <div class="container">
             <header class="mt-7 mb-24">
                 <nav class="flex justify-between items-center w-full mx-auto py-3 relative">
