@@ -8,19 +8,37 @@ class ControlStateRepository
 {
     public function getState(int $relayID)
     {
+        $relayID = $this->convertID($relayID);
         return $this->getBuilder()->where('id_alat', $relayID)->first();
+    }
+
+    public function getPumpState()
+    {
+        return $this->getBuilder()->whereIn('id_alat', [6, 12])->get();
     }
 
     public function setOn(int $relayID)
     {
+        $relayID = $this->convertID($relayID);
+
         $this->getBuilder()->where('id_alat', $relayID)->update(['control_value' => 1]);
         $this->togglePump($relayID, 1);
     }
 
     public function setOff(int $relayID)
     {
+        $relayID = $this->convertID($relayID);
+
         $this->getBuilder()->where('id_alat', $relayID)->update(['control_value' => 0]);
         $this->togglePump($relayID, 0);
+    }
+
+    public function convertID(int $relayID)
+    {
+        if (in_array($relayID, range(1, 5)))
+            return $relayID;
+
+        return $relayID + 1;
     }
 
     private function togglePump(int $relayID, int $state)

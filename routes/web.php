@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControlController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\HistoryController;

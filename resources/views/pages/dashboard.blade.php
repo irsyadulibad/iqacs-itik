@@ -90,9 +90,9 @@
                         </p>
                     </div>
                     <div
-                        class="bg-gray-100 w-full p-4 rounded-b-lg flex justify-between gap-5 items-center"
+                        class="bg-gray-100 w-full px-4 py-2 rounded-b-lg flex justify-between items-center"
                     >
-                        <div class="flex flex-col gap-3">
+                        <div class="flex flex-col gap-1">
                             <p class="text-gray-800 font-medium">
                                 Kontrol Manual
                             </p>
@@ -102,8 +102,9 @@
                                 <input
                                     type="checkbox"
                                     value=""
-                                    class="sr-only peer"
-                                    checked
+                                    class="sr-only peer manual-control"
+                                    data-id="{{ $loop->iteration }}"
+                                    @checked($device->state?->control_value)
                                 />
                                 <div
                                     class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-orange dark:peer-focus:ring-orange dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange"
