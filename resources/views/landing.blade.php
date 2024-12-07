@@ -29,10 +29,10 @@
                             Jawa Timur, Indonesia
                         </p>
                         <a
-                            href="#"
+                            href="{{ route("dashboard") }}"
                             class="py-3 px-9 bg-orange text-title2 text-lwhite rounded-xl hover:bg-orange/80"
                         >
-                            Hubungi Kami
+                            Dashboard Monitoring
                         </a>
                     </div>
                 </div>
