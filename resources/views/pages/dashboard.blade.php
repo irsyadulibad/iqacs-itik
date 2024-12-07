@@ -9,7 +9,7 @@
                     class="rounded-lg bg-dprimary font-bold text-white cursor-pointer"
                     data-id="{{ $device->id }}"
                 >
-                    <div class="p-5">
+                    <div class="p-5 card-link" data-id="{{ $device->id }}">
                         <h6 class="m-0">Lokasi {{ $device->name }}</h6>
                         <p class="m-0 mt-1 text-sm">
                             Keterangan Lokasi:
@@ -140,15 +140,13 @@
     @endforeach
 
     @push("script")
-        {{--
-            <script>
-            document.querySelectorAll('[data-id]').forEach((el) => {
-            el.addEventListener('click', function (e) {
-            if (e.target.nodeName == 'A') return
-            window.location.href = `/device/${el.dataset.id}`
+        <script>
+            document.querySelectorAll('.card-link').forEach((el) => {
+                el.addEventListener('click', function (e) {
+                    if (e.target.nodeName == 'A') return
+                    window.location.href = `/device/${el.dataset.id}`
+                })
             })
-            })
-            </script>
-        --}}
+        </script>
     @endpush
 </x-app-layout>
